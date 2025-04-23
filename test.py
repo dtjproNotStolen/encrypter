@@ -1,13 +1,11 @@
-def int_to_char(inp):
-    chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'v', 'x', 'y', 'z']
-    return chars[inp]
+from random import randint
 
-print(int_to_char(1))
+def gen_key(lenght):
+    lenght += 0
+    hashKey = []
+    for i in range(lenght):
+        hashKey.append(randint(0,25))
+    return hashKey
 
-def char_to_int(inp):
-    chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'w', 'v', 'x', 'y', 'z']
-    for i in range(23):
-        if inp == chars[i]:
-            return i
 
-print(char_to_int('a'))
+print(gen_key(2))
