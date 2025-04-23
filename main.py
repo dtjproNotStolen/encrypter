@@ -21,12 +21,19 @@ print(string_Array)
 print(lenght)
 
 #hasher
-
-key = gen_key(lenght)
+if loadNewKey:
+    key = Encrypter.gen_key(lenght)
+else:
+    key = [2,2]
+for i in range(lenght):
+    string_Array[i] = Encrypter.char_to_int(string_Array[i])
+    string_Array[i] = Encrypter.change_char_pos(key[i], string_Array[i])
+    string_Array[i] = Encrypter.int_to_char(string_Array[i])
+print(key)
+print(string_Array)
 
 for i in range(lenght):
-    string_Array[i] = char_to_int(string_Array[i])
-    string_Array[i] = change_char_pos(key[i], string_Array[i])
-    string_Array[i] = int_to_char(string_Array[i])
-print(key)
+    string_Array[i] = Decrypter.char_to_int(string_Array[i])
+    string_Array[i] = Decrypter.change_char_pos(key[i], string_Array[i])
+    string_Array[i] = Decrypter.int_to_char(string_Array[i])
 print(string_Array)
