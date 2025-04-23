@@ -9,4 +9,7 @@ string_Array = []
 for i in input1:
     string_Array.append(i)
 
+
+
+
 print(string_Array)
